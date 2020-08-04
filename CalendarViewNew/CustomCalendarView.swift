@@ -74,6 +74,14 @@ extension CustomCalendarView: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
              desc?.text = ""
         }
+        
+        if indexPath.section == 0 {
+            let currentDay = viewModel.getDayInInt(date: currentDate)
+            if let descVal = desc?.text, !descVal.isEmpty, descVal == String(currentDay) {
+                desc?.backgroundColor = UIColor.green
+                cell.layer.cornerRadius = 6
+            }
+        }
 
         return cell
     }
