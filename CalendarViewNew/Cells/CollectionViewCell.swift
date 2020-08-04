@@ -12,6 +12,13 @@ class CollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
           super.awakeFromNib()
           // Initialization code
-      }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        let desc = viewWithTag(1) as? UILabel
+        desc?.backgroundColor = .none
+        cornerRadius = 0
+    }
     
 }

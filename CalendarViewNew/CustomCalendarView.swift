@@ -64,7 +64,7 @@ extension CustomCalendarView: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! CollectionViewCell
         let desc = cell.viewWithTag(1) as? UILabel
         let firstDayOfTheWeekInAMonth = viewModel.getDayOfWeek(viewModel.startOfMonth(viewModel.addMonth(currentDate, month: indexPath.section)))
 
