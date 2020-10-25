@@ -8,7 +8,8 @@
 
 import UIKit
 
-class CustomCalendarView: UIView {
+
+class VerticalCalendarView: UIView {
     let currentDate = Date()
     @IBOutlet weak var calendar: UICollectionView!
     var viewModel: CustomCalendarViewModel!
@@ -47,7 +48,7 @@ class CustomCalendarView: UIView {
     }
 }
 
-extension CustomCalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension VerticalCalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 12
     }
@@ -67,22 +68,26 @@ extension CustomCalendarView: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! CollectionViewCell
         let desc = cell.viewWithTag(1) as? UILabel
         let firstDayOfTheWeekInAMonth = viewModel.getDayOfWeek(viewModel.startOfMonth(viewModel.addMonth(currentDate, month: indexPath.section)))
+        cell.layer.cornerRadius = 6
 
         let diff = indexPath.item + 1 - firstDayOfTheWeekInAMonth!
+        
         if diff >= 0 {
             desc?.text = String(diff + 1)
         } else {
              desc?.text = ""
+             desc?.backgroundColor = .white
+             return cell
         }
         
         if indexPath.section == 0 {
             let currentDay = viewModel.getDayInInt(date: currentDate)
             if let descVal = desc?.text, !descVal.isEmpty, descVal == String(currentDay) {
-                desc?.backgroundColor = UIColor.green
-                cell.layer.cornerRadius = 6
+                desc?.backgroundColor = UIColor.green.withAlphaComponent(0.5)
+                return cell
             }
         }
-
+        desc?.backgroundColor = UIColor.blue.withAlphaComponent(0.3)
         return cell
     }
 
@@ -93,8 +98,7 @@ extension CustomCalendarView: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath)
         guard let title = headerView.viewWithTag(1) as? UILabel else {return headerView}
-        title.font = .boldSystemFont(ofSize: 14)
-        title.font.withSize(16)
+        title.font = .boldSystemFont(ofSize: 20)
         title.text = viewModel.getHeaderTitle(viewModel.addMonth(currentDate, month: indexPath.section))
         return headerView
     }

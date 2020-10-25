@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,18 +22,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlK-9t-ATE">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="1" y="1" width="48" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="JlK-9t-ATE" secondAttribute="bottom" id="1LT-zz-BuY"/>
-                            <constraint firstItem="JlK-9t-ATE" firstAttribute="leading" secondItem="Ogy-zt-QuZ" secondAttribute="leading" id="38m-NJ-sl6"/>
-                            <constraint firstAttribute="trailing" secondItem="JlK-9t-ATE" secondAttribute="trailing" id="CVJ-0e-lby"/>
-                            <constraint firstItem="JlK-9t-ATE" firstAttribute="top" secondItem="Ogy-zt-QuZ" secondAttribute="top" id="wOa-af-J3a"/>
+                            <constraint firstAttribute="bottom" secondItem="JlK-9t-ATE" secondAttribute="bottom" constant="1" id="1LT-zz-BuY"/>
+                            <constraint firstItem="JlK-9t-ATE" firstAttribute="leading" secondItem="Ogy-zt-QuZ" secondAttribute="leading" constant="1" id="38m-NJ-sl6"/>
+                            <constraint firstAttribute="trailing" secondItem="JlK-9t-ATE" secondAttribute="trailing" constant="1" id="CVJ-0e-lby"/>
+                            <constraint firstItem="JlK-9t-ATE" firstAttribute="top" secondItem="Ogy-zt-QuZ" secondAttribute="top" constant="1" id="wOa-af-J3a"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -45,4 +47,9 @@
             <point key="canvasLocation" x="137" y="161"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

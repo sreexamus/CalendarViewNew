@@ -1,24 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CalendarViewNew" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RKy-rv-Mtv">
+                                <rect key="frame" x="122.5" y="100" width="169" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFH-ua-hc4">
+                                        <rect key="frame" x="0.0" y="0.0" width="169" height="56"/>
+                                        <state key="normal" title="Horizontal CalendarView"/>
+                                        <connections>
+                                            <segue destination="Uhu-O1-aBM" kind="show" id="1tM-zv-r3K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avU-bV-ujf">
+                                        <rect key="frame" x="0.0" y="64" width="169" height="56"/>
+                                        <state key="normal" title="Vertical CalendarView"/>
+                                        <connections>
+                                            <segue destination="KRG-Xf-Dcn" kind="show" id="4UW-n5-CbG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Del-TQ-l5G"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RKy-rv-Mtv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="abU-Ab-lss"/>
+                            <constraint firstItem="RKy-rv-Mtv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="szc-7H-46c"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1GJ-HL-5mH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-326" y="128"/>
+        </scene>
+        <!--Vertical Calendar View Controller-->
+        <scene sceneID="PQE-WH-t1i">
+            <objects>
+                <viewController id="KRG-Xf-Dcn" customClass="VerticalCalendarViewController" customModule="CalendarViewNew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qq6-oZ-BTJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ouM-wy-xYj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yx5-ud-x3k"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efX-0F-9ve" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="128"/>
+        </scene>
+        <!--Horizontal Calendar View Controller-->
+        <scene sceneID="uTZ-MW-Bfp">
+            <objects>
+                <viewController id="Uhu-O1-aBM" customClass="HorizontalCalendarViewController" customModule="CalendarViewNew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LKr-L9-rgt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDb-gh-C0f">
+                                <rect key="frame" x="10" y="10" width="394" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRG-dz-5cs">
+                                        <rect key="frame" x="96" y="7" width="202" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="M64-r6-E8G"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odr-0n-hNr">
+                                        <rect key="frame" x="16" y="0.0" width="70" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="f0b-aA-Nd8"/>
+                                            <constraint firstAttribute="height" constant="35" id="lNo-pH-sMj"/>
+                                        </constraints>
+                                        <state key="normal" title="Prev"/>
+                                        <connections>
+                                            <action selector="prevMonth:" destination="Uhu-O1-aBM" eventType="touchUpInside" id="eZy-KM-Bb0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O00-46-5up">
+                                        <rect key="frame" x="308" y="0.0" width="70" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="CgU-12-lwW"/>
+                                            <constraint firstAttribute="height" constant="35" id="mrK-M7-oBQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="nextMonh:" destination="Uhu-O1-aBM" eventType="touchUpInside" id="fhv-YN-ani"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="O00-46-5up" firstAttribute="leading" secondItem="gRG-dz-5cs" secondAttribute="trailing" constant="10" id="0uw-4B-Lvk"/>
+                                    <constraint firstAttribute="height" constant="35" id="3wS-Hd-LJU"/>
+                                    <constraint firstItem="gRG-dz-5cs" firstAttribute="centerY" secondItem="HDb-gh-C0f" secondAttribute="centerY" id="5el-fE-CLP"/>
+                                    <constraint firstItem="Odr-0n-hNr" firstAttribute="centerY" secondItem="HDb-gh-C0f" secondAttribute="centerY" id="7Bl-fj-WOp"/>
+                                    <constraint firstItem="Odr-0n-hNr" firstAttribute="leading" secondItem="HDb-gh-C0f" secondAttribute="leading" constant="16" id="G4q-rz-ioJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="O00-46-5up" secondAttribute="trailing" constant="16" id="Hc8-4e-dlX"/>
+                                    <constraint firstItem="gRG-dz-5cs" firstAttribute="leading" secondItem="Odr-0n-hNr" secondAttribute="trailing" constant="10" id="S8Z-dp-Ak2"/>
+                                    <constraint firstItem="O00-46-5up" firstAttribute="centerY" secondItem="HDb-gh-C0f" secondAttribute="centerY" id="yDl-Fc-hZx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fuv-lN-SOb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HDb-gh-C0f" firstAttribute="top" secondItem="fuv-lN-SOb" secondAttribute="top" constant="10" id="PQQ-Zg-svn"/>
+                            <constraint firstItem="fuv-lN-SOb" firstAttribute="trailing" secondItem="HDb-gh-C0f" secondAttribute="trailing" constant="10" id="ZHg-YE-z22"/>
+                            <constraint firstItem="HDb-gh-C0f" firstAttribute="leading" secondItem="fuv-lN-SOb" secondAttribute="leading" constant="10" id="d76-4J-sqq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SZR-Wv-dGG"/>
+                    <connections>
+                        <outlet property="headerView" destination="HDb-gh-C0f" id="U3m-WA-HPp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9S6-Px-i7S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="215.94202898550725" y="-528.34821428571422"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

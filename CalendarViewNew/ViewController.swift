@@ -12,12 +12,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let calendar = CustomCalendarView()
-        view.addToEdgeConstraints(calendar)
-
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func showHotizontalCalendarView(_ sender: Any) {
+        performSegue(withIdentifier: "showVC", sender: nil)
+    }
+    
+    @IBAction func showVerticalCalendarView(_ sender: Any) {
+        performSegue(withIdentifier: "showVC", sender: nil)
+    }
+    
 }
 
